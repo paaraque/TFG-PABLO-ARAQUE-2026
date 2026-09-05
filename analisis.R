@@ -458,6 +458,11 @@ nueva_var <- exp(modelo_regres_log$coefficients[1] +
 
 estim_dir_Hajek$estimacion_var[estim_dir_Hajek$id_dominio=="ES43_Female_6+"] <- nueva_var
 
+# Recalculamos el CV de esa fila
+estim_dir_Hajek$CV[estim_dir_Hajek$id_dominio=="ES43_Female_6+"] <- sqrt(estim_dir_Hajek$estimacion_var[estim_dir_Hajek$id_dominio == "ES43_Female_6+"]) / 
+  abs(estim_dir_Hajek$estimacion[estim_dir_Hajek$id_dominio == "ES43_Female_6+"])
+
+
 rm(datos_Th_interesantes,modelo_regres,modelo_regres_log,
    n_d_sin_132,log_vector_var_Hajeck,nueva_var)
 
