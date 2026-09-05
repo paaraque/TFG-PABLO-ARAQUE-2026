@@ -29,7 +29,7 @@ de variación (CV), utilizando el umbral del 20% de Eurostat como criterio de ca
 ```
 .
 ├── analisis.R                 # Script principal (Fases 1-5)
-├── data/                      # Microdatos ECV (no incluidos, ver más abajo)
+├── data/                      # Microdatos ECV 
 │   ├── CSV_ECV_Td_2024/esudb24d.csv   # Fichero D: datos básicos del hogar
 │   ├── CSV_ECV_Th_2024/esudb24h.csv   # Fichero H: datos detallados del hogar
 │   └── CSV_ECV_Tr_2024/esudb24r.csv   # Fichero R: datos de registro/individuo
@@ -52,15 +52,9 @@ Se utilizan los tres ficheros estándar de la ECV / EU-SILC (formato UDB) del a�
 | `esudb24h` (H) | Hogar | Renta, privación material, condiciones de la vivienda, indicador de pobreza (`vhPobreza`) |
 | `esudb24r` (R) | Individuo | Sexo, edad, pesos muestrales |
 
-**Los microdatos no se incluyen en este repositorio** por las condiciones de uso de
-Eurostat/INE. Para reproducir el análisis:
-
-1. Solicita el acceso a los microdatos de la ECV a través del
-   [INE]([https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176807](https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176807&menu=resultados&idp=1254735976608#_tabs-1254736195153)).
-2. Coloca los tres CSV en la estructura de carpetas indicada arriba, dentro de `data/`.
-3. El script asume rutas **relativas** al directorio raíz del proyecto
-   (usa `file.path("data", ...)`), por lo que basta con abrir `analisis.R` desde la
-   raíz del repositorio (o un `.Rproj`) para que funcione sin modificar rutas.
+El script asume rutas **relativas** al directorio raíz del proyecto
+(usa `file.path("data", ...)`), por lo que basta con abrir `analisis.R` desde la
+raíz del repositorio (o un `.Rproj`) para que funcione sin modificar rutas.
 
 ## Requisitos
 
@@ -126,10 +120,4 @@ explícitamente en `outputs/`  y las tablas de resultados se exportan como CSV a
   notable disminución en la precisión del ECM estimado.
 - Los resultados dependen de la versión y cobertura muestral de la ECV 2024;
   no son directamente comparables con estimaciones oficiales de Eurostat/INE.
-
-
-## Licencia
-
-Los datos de la ECV están sujetos a las condiciones de uso
-de Eurostat/INE y no están cubiertos.
 
